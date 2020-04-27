@@ -21,7 +21,7 @@ public:
     cena = 900;
     }else if(TipOruzja == BOMBA){
     puc = EXPLOSION;
-    BrMunicije = 1;
+    BrMunicije = 3;
     cena = 1100;
     }else if(TipOruzja == AUTOMATSKA_PUSKA){
     puc = AUTOMATSKI;
@@ -29,12 +29,15 @@ public:
     cena = 3500;
     }else if(TipOruzja == BAZUKA){
     puc = SINGLE;
-    BrMunicije = 2;
+    BrMunicije = 5;
     cena = 1700;
     }
 
+     bool buy();
+     bool reload();
+
      int GetCena() const{return cena;}
-     void SetCena(int cena)(cean = c);
+     void SetCena(int cena)(cena = c);
      int GetTipOruzja() const{return TipOruzja;}
      void SetTipOruzja(TipOruzja t){ tip = t;}
      int GetTipPucanja() const{return TipPucanja;}
