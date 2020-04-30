@@ -11,8 +11,14 @@ public:
         NazivMisije = "Prologue";
         opis = "Moras da opljackas banku sa svojom bandom. Nadji nekoliko talaca, uzmi pare i potrudi se da brzo pobegnes od policije!";
     }
-    misije(string nm, string o){NazivMisije = nm, opis = o;}
-    misije(const misije& s){NazivMisije = n.NazivMisije; cena = n.cena;};
+    misije(string nm, string o){
+        NazivMisije = nm;
+        opis = o;
+    }
+    misije(const misije& s){
+        NazivMisije = n.NazivMisije;
+        cena = n.cena;
+    }  
     int getopis() const{return opis;}
     void setopis(string o) {opis = o;}
     int getNazivMisije() const{return NazivMisije;}
