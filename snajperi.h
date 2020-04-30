@@ -12,11 +12,21 @@ private:
     int stanje;  //koliko igrac ima trenutno para na svom racunu
     int TrenutnoMunicije;
 public:
+    sniperi():oruzje(){
     tip = SNAJPER;
     puc = SINGLE;
     cena = 11000;
     BrMunicije = 15;
-
+    }
+    sniperi(int c, int br, int s, int tm, TipOruzja t, TipPucanja p){
+        cena = c;
+        BrMunicije = br;
+        stanje = s;
+        TrenutnoMunicije = tm;
+        tip = t;
+        puc = p;
+    }
+    
     bool sniperi::buy(){
     bool uspesno;
 
@@ -41,6 +51,15 @@ public:
     cout << "Snajper je vec napunjen." << endl
     }
     return uspesno;
+    }
+    
+    sniperi(const sniperi &s){
+        cena = s.cena;
+        BrMunicije = s.BrMunicije;
+        stanje = s.stanje;
+        TrenutnoMunicije = s.TrenutnoMunicije;
+        tip = s.tip;
+        puc = s.puc;
     }
 
     int GetCena() const {return cena;}
