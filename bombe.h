@@ -17,6 +17,7 @@ private:
     int BrMunicije;
     int TrenutnoMunicije;
 public:
+    bomba():oruzje(){
     tip = BOMBA;
     puc = EXPLOSION;
     cena = 1100;
@@ -26,6 +27,18 @@ public:
         damage = 0;
     }else {
     damage = 150;
+    }
+       }
+       
+     bomba(int c, int br, int d, int tm, int s, TipBombe b, TipOruzja t, TipPucanja p):oruzje(){
+        cena = c;
+        BrMunicije = br;
+        damage = d;
+        TrenutnoMunicije = tm;
+        stanje = s;
+        bum = b;
+        tip = t;
+        puc = p;
     }
 
     bool bombe::buy(){
@@ -41,6 +54,16 @@ public:
     return uspesno;
     }
 
+    bombe(const bombe &boom):oruzje(){
+        cena = boom.cena;
+        TrenutnoMunicije = boom.TrenutnoMunicije;
+        stanje = boom.stanje;
+        damage = boom.damage;
+        BrMunicije = boom.BrMunicije;
+        tip = boom.tip;
+        puc = boom.puc;
+        bum = boom.bum;
+    }
 
     int GetBrMunicije()const {return BrMunicije;}
     void SetBrMunicije(int BrMunicije)(BrMunicije br);
