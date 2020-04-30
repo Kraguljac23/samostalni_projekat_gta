@@ -14,6 +14,7 @@ private:
     int stanje;
     int TrenutnoMunicije;
 public:
+    pistolji():oruzje(){
     tip = PISTOLJ;
 
     if(tipPistolja == AUTOMATSKI){
@@ -24,6 +25,15 @@ public:
 
     cena = 900;
     BrMunicije = 20;
+    }
+    
+    pistolji(int c, int br, int s, int tm, tipPistolja t) : oruzje(){
+        cena = c;
+        BrMunicije = br;
+        stanje = s;
+        TrenutnoMunicije = tm;
+        tip = t;
+    }
 
     bool pistolji::buy(){
     bool uspesno;
@@ -50,7 +60,15 @@ public:
     }
     return uspesno;
     }
-
+    
+    pistolji(const pistolji &p):oruzje(){
+        tip = p.tip;
+        puc = p.puc;
+        cena = p.cena;
+        BrMunicije = p.BrMunicije;
+        TrenutnoMunicije = p.TrenutnoMunicije;
+        stanje = p.stanje;
+    }
 
     int GetCena()const {return cena;}
     void setCena(int cena)(cena = c);
