@@ -11,6 +11,7 @@ private:
     int BrMunicije;
     int cena;
 public:
+    oruzje(){
     if(TipOruzja == SNAJPER;){
     puc = SINGLE;
     BrMunicije = 15;
@@ -31,6 +32,21 @@ public:
     puc = SINGLE;
     BrMunicije = 5;
     cena = 1700;
+    }
+    }
+    
+    oruzje(TipPucanja p, TipOruzja t, int br, int c){
+        puc = p;
+        tip = t;
+        BrMunicije = br;
+        cena = c;
+    }
+    
+    oruzje(const oruzje &o){
+        tip = o.tip;
+        puc = o.puc;
+        BrMunicije = o.BrMunicije;
+        cena = o.cena;
     }
 
      bool buy();
