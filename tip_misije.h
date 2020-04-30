@@ -3,7 +3,7 @@
 
 #include "misije.h"
 
-enum(PLJACKA, UBISTVO);
+enum TipMisije(PLJACKA, UBISTVO);
 
 
 class TipMisije:public misije{
@@ -11,9 +11,9 @@ private:
     TipMisije tip;
     vreme pocetka;
     vreme zavrsetka;
-    reward r;
+    int reward;
     NazivMisije naziv;
-
+    string opis;
 public:
     TipMisije(): misije{
     tip = PLJACKA;
@@ -34,13 +34,23 @@ public:
     }
 
 
-    TipMisije(char *h1, char *m1, char *s1, char *h2, char *m2, char *s2, tipMisije m, vreme v, int start, int end, vreme p, vreme z, int nm int o):
-        if(tip = PLJACKA){
-            r = 10000*(rand());
-        }else{
-        r = 10000;
+    TipMisije(TipMisije t, vreme z, vreme p, int r, string o, NazivMisije n):misije(){
+        tip = t;
+        zavrsetka = z;
+        pocetka = p;
+        reward = r;
+        opis = o;
+        naziv = n;
+    }
+    
+    TipMisije(const TipMisije& t){
+        tip = t.tip;
+        pocetka = t.pocetka;
+        zavrsetka = t.zavrsetka;
+        opis = t.opis;
+        misije = t.NazivMisije;
+        opis = t.opis;
         }
-
 
         TipMisije(const TipMisije& t): tip (t.tip), pocetka(t.pocetka), zavrsetka(t.zavrsetka), opis(t.opis), misije(t.NazivMisije, t.opis);
         TipMisije getTipMisije() const
