@@ -15,6 +15,7 @@ private:
    int Stanje;
    int TrenutnoMunicije;
 public:
+   AutomatskePuske():oruzje(){
     tip = AUTOMATSKA_PUSKA;
 
     if(TipPuske = AUTOMATSKA){
@@ -25,7 +26,18 @@ public:
 
     cena = 3500;
     BrMunicije = 30;
-
+   }
+   
+    AutomatskePuske(int c, int br, int s, int tm, TipPuske g, TipPucanja p, TipOruzja t):oruzje(){
+        cena = c;
+        BrMunicije = br;
+        Stanje = s;
+        TrenutnoMunicije = tm;
+        gun = g;
+        puc = p;
+        tip = t;
+    }
+   
     bool AutomatskePuske()::buy(){
     bool uspesno;
 
@@ -50,6 +62,16 @@ public:
     cout << "Puska je vec napunjena." << endl
     }
     return uspenso;
+    }
+   
+   AutomatskePuske(const AutomatskePuske &a):oruzje(){
+        cena = a.cena;
+        BrMunicije = a.BrMunicije;
+        Stanje = a.Stanje;
+        TrenutnoMunicije = a.TrenutnoMunicije;
+        tip = a.tip;
+        puc = a.puc;
+        gun = a.gun;
     }
 
     int GetBrMunicije()const {return BrMunicije;}
