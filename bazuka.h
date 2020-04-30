@@ -12,10 +12,21 @@ private:
     int TrenutnoMunicije;
     int stanje;
 public:
+    bazuka():oruzje(){
     cena = 1700;
     BrMunicije = 5;
     tip = BAZUKA;
     puc = SINGLE;
+    }
+    
+    bazuka(int c, int br, int tm, int s, TipPucanja p, TipOruzja t):oruzje(){
+        cena = c;
+        BrMunicije = br;
+        TrenutnoMunicije = tm;
+        stanje = s;
+        puc = p;
+        tip = t;
+    }
 
     bool bazuka::buy(){
     bool uspesno;
@@ -41,7 +52,15 @@ public:
     }
     return uspesno;
     }
-
+    
+     bazuka(const bazuka &b):oruzje(){
+        cena = b.cena;
+        BrMunicije = b.BrMunicije;
+        stanje = b.stanje;
+        TrenutnoMunicije = b.TrenutnoMunicije;
+        tip = b.tip;
+        puc = b.puc;
+    }
 
     int GetCena()const {return cena;}
     void SetCena(int cena)(cena = c);
