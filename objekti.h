@@ -1,0 +1,6 @@
+#ifndef OBJEKTI_H_INCLUDED
+#define OBJEKTI_H_INCLUDED
+
+
+
+#endif // OBJEKTI_H_INCLUDED
