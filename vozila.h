@@ -5,8 +5,8 @@ enum TipVozila(DRUMSKO, VAZDUSNO, VODENO);
 enum stanjeVozila{UPALJEN, UGASEN, POKVAREN};
 
 struct Cena{
-    int buy;
-    int sell;
+    double buy;
+    double sell;
 };
 class vozila{
 private:
