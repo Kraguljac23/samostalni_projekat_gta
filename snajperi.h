@@ -5,7 +5,7 @@
 
 class sniperi: public oruzje{
 private:
-    int stanje;  //koliko igrac ima trenutno para na svom racunu
+    double stanje;  //koliko igrac ima trenutno para na svom racunu
     int TrenutnoMunicije;
 public:
     sniperi():oruzje(){
@@ -15,7 +15,7 @@ public:
     BrMunicije = 15;
     }
 
-    sniperi(int c, int br, int s, int tm, TipOruzja t, TipPucanja p):oruzje(c, br, p, t){
+    sniperi(int c, int br, double s, int tm, TipOruzja t, TipPucanja p):oruzje(c, br, p, t){
         stanje = s;
         TrenutnoMunicije = tm;
     }
@@ -52,8 +52,8 @@ public:
     }
 
 
-    int GetStanje() const{return stanje;}
-    void SetStanje(int stanje)(stanje = s);
+    double GetStanje() const{return stanje;}
+    void SetStanje(double stanje)(stanje = s);
 
     int GetTrenutnoMunicije() const {return TrenutnoMunicije;}
     void SetTrenutnoMunicije(int TrenutnoMunicije)(TrenutnoMunicije = m);
