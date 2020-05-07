@@ -9,7 +9,7 @@ enum TipBombe{GRANATA, STUN, SMOKE};
 class bombe: public oruzje{
 private:
     TipBombe bum;
-    int stanje;
+    double stanje;
     int damage;
     int TrenutnoMunicije;
 public:
@@ -26,7 +26,7 @@ public:
     }
     }
 
-    bomba(int c, int br, int d, int tm, int s, TipBombe b, TipOruzja t, TipPucanja p):oruzje(c, br, p, t){
+    bomba(int c, int br, int d, int tm, double s, TipBombe b, TipOruzja t, TipPucanja p):oruzje(c, br, p, t){
         cena = c;
         BrMunicije = br;
         damage = d;
@@ -59,8 +59,8 @@ public:
     }
 
 
-    int GetStanje()const{return stanje;}
-    void SetStanje(int stanje)(stanje = s);
+    double GetStanje()const{return stanje;}
+    void SetStanje(double stanje)(stanje = s);
 
     int GetTrenutnoMunicije()const {return TrenutnoMunicije;}
     void setTrenutnoMunicije(int m)(TrenutnoMunicije = m);
