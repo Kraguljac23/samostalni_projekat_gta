@@ -8,7 +8,7 @@ private:
     Pozicija poz;
     int wl; // wanted level
     int gorivo;
-    int money;
+    double money;
 public:
     PolicijskaVozila():vozila(){
         TipVozila = DRUMSKO;
@@ -21,20 +21,18 @@ public:
 
     }
 
-        PolicijskaVozila(int w, int g, Pozicija p, int gg, int s, int ts, struct Cena cc, stanjeVozila ss, TipVozila v): vozila(gg, ss, cc, v, ts, s){
+        PolicijskaVozila(double m, int w, int g, Pozicija p, int gg, int s, int ts, struct Cena cc, stanjeVozila ss, TipVozila v): vozila(gg, ss, cc, v, ts, s){
         wl = w;
         gorivo = g;
         poz = p;
+        money = m;
         }
 
-        PolicijskaVozila(const PolicijskaVozila& p): vozila(){
-        Cena = p.cena;
+        PolicijskaVozila(const PolicijskaVozila& p): vozila(p.gears, p.seats, p.TopSpeed, p.cena){
         gorivo = p.gorivo;
         wl = p.wl;
-        gears = p.gears;
-        seats = p.seats;
-        TopSpeed = p.TopSpeed;
         poz = p.poz;
+        money = p.money;
         }
 
 
@@ -124,8 +122,8 @@ public:
 
 
 
-    int getMoney()const{return money;}
-    void setMoney(int m)(money = m);
+    double getMoney()const{return money;}
+    void setMoney(double m)(money = m);
 
     int getGorivo()const{return gorivo;}
     void setGorivo(int g)(gorivo = g);
