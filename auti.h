@@ -12,7 +12,7 @@ private:
     TipAuta car;
     DriveTrain drive;
     int gorivo;
-    int money;
+    double money;
 public:
     auti(): vozila(){
         if(car == SPORTSKI){
@@ -51,7 +51,7 @@ public:
 
     }
 
-    auti(TipAuta c, DriveTrain d, int g, int m, int ss, int gg, int ts, TipVozila v, struct Cena cc, stanjeVozila ss):vozila(ss, gg, ts, v, cc, s){
+    auti(TipAuta c, DriveTrain d, int g, double m, int ss, int gg, int ts, TipVozila v, struct Cena cc, stanjeVozila ss):vozila(ss, gg, ts, v, cc, s){
         car = c;
         drive = d;
         gorivo = g;
@@ -134,8 +134,8 @@ money = a.money;
 
 
 
-    int getMoney()const{return money;}
-    void setMoney(int m)(money = m);
+    double getMoney()const{return money;}
+    void setMoney(double m)(money = m);
 
     int getgorivo()const{return gorivo;}
     void setGorivo(int g)(gorivo = g);
