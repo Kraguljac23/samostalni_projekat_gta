@@ -8,7 +8,7 @@ class helihopteri(): public vozila(){
 private:
     TipHelihoptera heli;
     int gorivo;
-    int money;
+    double money;
 public:
     helihopteri(): vozila(){
         TipVozila = VAZDUSNO;
@@ -36,7 +36,7 @@ public:
 
     }
 
-    helihopteri(int g, int m, int s, int ts, int gr, TipHelihoptera h, struct cena c, stanjeVozila ss):vozila(ts, gg, cc, ss, v, s){
+    helihopteri(int g, double m, int s, int ts, int gr, TipHelihoptera h, struct cena c, stanjeVozila ss):vozila(ts, gg, cc, ss, v, s){
         gorivo = g;
         money = m;
         heli = h;
@@ -129,8 +129,8 @@ public:
     }
 
 
-    int getMoney()const{return money;}
-    void setMoney(int m)(money = m);
+    double getMoney()const{return money;}
+    void setMoney(double m)(money = m);
 
     int getgorivo()const {return gorivo;}
     void setgorivo(int g)(gorivo = g);
