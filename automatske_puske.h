@@ -8,7 +8,7 @@ enum TipPuske{AUTOMATSKA, BURST};
 class AutomatskePuske: public oruzje{
 private:
    TipPuske gun;
-   int Stanje;
+   double Stanje;
    int TrenutnoMunicije;
 public:
     AutomatskePuske():oruzje(){
@@ -25,7 +25,7 @@ public:
     BrMunicije = 30;
     }
 
-    AutomatskePuske(int c, int br, int s, int tm, TipPuske g, TipPucanja p, TipOruzja t):oruzje(c, br, p, t){
+    AutomatskePuske(int c, int br, double s, int tm, TipPuske g, TipPucanja p, TipOruzja t):oruzje(c, br, p, t){
         Stanje = s;
         TrenutnoMunicije = tm;
         gun = g;
@@ -69,7 +69,7 @@ public:
     void SetTipPuske(TipPuske g)(gun = g);
 
     GetStanje()const{return Stanje;}
-    void SetStanje(int Stanje)(Stanje = s);
+    void SetStanje(double Stanje)(Stanje = s);
 
     int GetTrenutnoMunicije()const{return TrenutnoMunicije;}
     void setTrenutnoMunicije(int TrenutnoMunicije)(TrenutnoMunicije = m);
