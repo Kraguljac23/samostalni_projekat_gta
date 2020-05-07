@@ -6,7 +6,7 @@
 class bazuka: public oruzje{
 private:
     int TrenutnoMunicije;
-    int stanje;
+    double stanje;
 public:
     bazuka():oruzje(){
     cena = 1700;
@@ -15,7 +15,7 @@ public:
     puc = SINGLE;
     }
 
-    bazuka(int c, int br, int tm, int s, TipPucanja p, TipOruzja t):oruzje(c, br, p, t){
+    bazuka(int c, int br, int tm, double s, TipPucanja p, TipOruzja t):oruzje(c, br, p, t){
         TrenutnoMunicije = tm;
         stanje = s;
     }
@@ -54,8 +54,8 @@ public:
     int GetTrenutnoMunicije()const {return TrenutnoMunicije;}
     void SetTrenutnoMunicije(int TrenutnoMunicije)(TrenutnoMunicije m);
 
-    int GetStanje() const {return stanje;}
-    void SetStanje(int s)(stanje = s);
+    double GetStanje() const {return stanje;}
+    void SetStanje(double s)(stanje = s);
 
 };
 
