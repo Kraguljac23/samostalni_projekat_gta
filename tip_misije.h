@@ -17,7 +17,7 @@ private:
     TipMisije tip;
     vreme pocetka;
     vreme zavrsetka;
-    int reward;
+    double reward;
 public:
     TipMisije(): misije{
     tip = PLJACKA;
@@ -42,7 +42,7 @@ public:
     opis = "Moras da opljackas banku sa svojom bandom. Nadji nekoliko taoca, uzmi pare i potrudi se da sto pre pobegnes od policije!"
     }
 
-    TipMisije(TipMisije t, vreme z, vreme p, int r, DinString o, DinString n):misije(o, n){
+    TipMisije(TipMisije t, vreme z, vreme p, double r, DinString o, DinString n):misije(o, n){
         tip = t;
         zavrsetka = z;
         pocetka = p;
@@ -62,8 +62,8 @@ public:
         getpocetka() const{return pocetka;}
         void setpocetka(vreme p)(pocetka = p)
 
-        int getreward()const {return reward;}
-        void setreward(int r)(reward = r);
+        double getreward()const {return reward;}
+        void setreward(double r)(reward = r);
 
         getzavrsetka() const{return zavrsetka;}
         void setzavrsetka(vreme z)(zavrsetka = z);
