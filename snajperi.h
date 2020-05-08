@@ -6,7 +6,6 @@
 class sniperi: public oruzje{
 private:
     double stanje;  //koliko igrac ima trenutno para na svom racunu
-    int TrenutnoMunicije;
 public:
     sniperi():oruzje(){
     tip = SNAJPER;
@@ -15,14 +14,12 @@ public:
     BrMunicije = 15;
     }
 
-    sniperi(int c, int br, double s, int tm, TipOruzja t, TipPucanja p):oruzje(c, br, p, t){
+    sniperi(int c, int br, double s, int tm, TipOruzja t, TipPucanja p):oruzje(c, br, p, t,tm){
         stanje = s;
-        TrenutnoMunicije = tm;
     }
 
-     sniperi(const sniperi &s):oruzje(s.cena, s.tip, s.puc, s.BrMunicije){
+     sniperi(const sniperi &s):oruzje(s.cena, s.tip, s.puc, s.BrMunicije, s.TrenutnoMunicije){
         stanje = s.stanje;
-        TrenutnoMunicije = s.TrenutnoMunicije;
     }
 
     bool sniperi::buy(){
@@ -55,8 +52,6 @@ public:
     double GetStanje() const{return stanje;}
     void SetStanje(double stanje)(stanje = s);
 
-    int GetTrenutnoMunicije() const {return TrenutnoMunicije;}
-    void SetTrenutnoMunicije(int TrenutnoMunicije)(TrenutnoMunicije = m);
 };
 
 
