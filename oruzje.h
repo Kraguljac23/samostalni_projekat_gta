@@ -10,6 +10,7 @@ private:
     TipPucanja puc;
     int BrMunicije;
     int cena;
+    int TrenutnoMunicije;
 public:
     oruzje(){
     if(TipOruzja == SNAJPER;){
@@ -35,11 +36,12 @@ public:
     }
     }
 
-    oruzje(TipPucanja p, TipOruzja t, int br, int c){
+    oruzje(TipPucanja p, TipOruzja t, int br, int c, int tm){
         puc = p;
         tip = t;
         BrMunicije = br;
         cena = c;
+        TrenutnoMunicije = tm;
     }
 
     oruzje(const oruzje &o){
@@ -47,6 +49,7 @@ public:
         puc = o.puc;
         BrMunicije = o.BrMunicije;
         cena = o.cena;
+        TrenutnoMunicije = o.TrenutnoMunicije;
     }
 
      bool buy();
@@ -54,6 +57,9 @@ public:
 
      int GetCena() const{return cena;}
      void SetCena(int cena)(cena = c);
+    
+    int GetTrenutnoMunicije()const {return TrenutnoMunicije;}
+    void setTrenutnoMunicije(int m)(TrenutnoMunicije = m);
 
      GetTipOruzja() const{return TipOruzja;}
      void SetTipOruzja(TipOruzja t){ tip = t;}
