@@ -6,8 +6,7 @@ enum TipBroda{GLISERI, JETSKI, JAHTE};
 class brodovi(): public vozila(){
 private:
     TipBroda brod;
-    int gorivo;
-    int money;
+    float gorivo;
 public:
     helihopteri(): vozila(){
         TipVozila = VAZDUSNO;
@@ -35,7 +34,7 @@ public:
 
     }
 
-    brodovi(int g, int s, int ts, int gg, TipBroda b, stanjeVozila ss, struct Cena cc, tipVozila v):vozila(gg, ts, ss, v, cc, s){
+    brodovi(float g, int s, int ts, int gg, TipBroda b, stanjeVozila ss, struct Cena cc, tipVozila v):vozila(gg, ts, ss, v, cc, s){
         drive = d;
         gorivo = g;
         brod = b;
@@ -130,11 +129,9 @@ public:
     }
 
 
-    int getMoney()const{return money;}
-    void setMoney(int m)(money = m);
 
-    int getGorivo()const{return gorivo;}
-    void setGOrivo(int g)(gorivo = g);
+    float getGorivo()const{return gorivo;}
+    void setGOrivo(float g)(gorivo = g);
 
     getTipBroda()const {return brod;}
     void setTipBroda(TipBroda b)(brod = b);
