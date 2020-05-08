@@ -7,8 +7,7 @@ enum TipHelihoptera{VOJNI, PUTNICKI, LUKSUZNI};
 class helihopteri(): public vozila(){
 private:
     TipHelihoptera heli;
-    int gorivo;
-    double money;
+    float gorivo;
 public:
     helihopteri(): vozila(){
         TipVozila = VAZDUSNO;
@@ -36,7 +35,7 @@ public:
 
     }
 
-    helihopteri(int g, double m, int s, int ts, int gr, TipHelihoptera h, struct cena c, stanjeVozila ss):vozila(ts, gg, cc, ss, v, s){
+    helihopteri(float g, double m, int s, int ts, int gr, TipHelihoptera h, struct cena c, stanjeVozila ss):vozila(ts, gg, cc, ss, v, s){
         gorivo = g;
         money = m;
         heli = h;
@@ -129,11 +128,9 @@ public:
     }
 
 
-    double getMoney()const{return money;}
-    void setMoney(double m)(money = m);
 
-    int getgorivo()const {return gorivo;}
-    void setgorivo(int g)(gorivo = g);
+    float getgorivo()const {return gorivo;}
+    void setgorivo(float g)(gorivo = g);
 
     getTipHelihoptera()const {return heli;}
     void setTipHelihoptera(TipHelihoptera h)(heli = h);
