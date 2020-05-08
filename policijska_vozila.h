@@ -6,9 +6,7 @@ enum Pozicija{GRADJANIN, SAOBRACAJAC, SPECIJALAC};
 class PolicijskaVozila(): public vozila(){
 private:
     Pozicija poz;
-    int wl; // wanted level
-    int gorivo;
-    double money;
+    float gorivo;
 public:
     PolicijskaVozila():vozila(){
         TipVozila = DRUMSKO;
@@ -21,18 +19,14 @@ public:
 
     }
 
-        PolicijskaVozila(double m, int w, int g, Pozicija p, int gg, int s, int ts, struct Cena cc, stanjeVozila ss, TipVozila v): vozila(gg, ss, cc, v, ts, s){
-        wl = w;
+        PolicijskaVozila(int g, Pozicija p, int gg, int s, int ts, struct Cena cc, stanjeVozila ss, TipVozila v): vozila(gg, ss, cc, v, ts, s){
         gorivo = g;
         poz = p;
-        money = m;
         }
 
         PolicijskaVozila(const PolicijskaVozila& p): vozila(p.gears, p.seats, p.TopSpeed, p.cena){
         gorivo = p.gorivo;
-        wl = p.wl;
         poz = p.poz;
-        money = p.money;
         }
 
 
@@ -122,14 +116,8 @@ public:
 
 
 
-    double getMoney()const{return money;}
-    void setMoney(double m)(money = m);
-
-    int getGorivo()const{return gorivo;}
-    void setGorivo(int g)(gorivo = g);
-
-    int getwl()const {return wl;}
-    void setwl(int w)(wl = w);
+    float getGorivo()const{return gorivo;}
+    void setGorivo(float g)(gorivo = g);
 
     getPozicija()const {return poz;}
     void setPozicija(Pozicija p)(poz = p);
