@@ -54,7 +54,6 @@ public:
         car = c;
         drive = d;
         gorivo = g;
-        money = m;
     }
 
     bool auti::upali(){
@@ -127,8 +126,6 @@ public:
         gorivo = a.gorivo;
         drive = a.drive;
         car = a.car;
-    stanje = a.stanje;
-money = a.money;
     }
 
 
