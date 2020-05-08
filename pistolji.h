@@ -9,7 +9,6 @@ class pistolji: public oruzje{
 private:
     tipPistolja pis;
     double stanje;
-    int TrenutnoMunicije;
 public:
     pistolji():oruzje(){
     tip = PISTOLJ;
@@ -23,9 +22,8 @@ public:
     cena = 900;
     BrMunicije = 20;
     }
-    pistolji(int c, int br, double s, int tm, tipPistolja p, TipOruzja t, TipPucanja p) : oruzje(c, br, p, t){
+    pistolji(int c, int br, double s, tipPistolja p, TipOruzja t, TipPucanja p) : oruzje(c, br, p, t,tm){
         stanje = s;
-        TrenutnoMunicije = tm;
         pis = p;
     }
 
@@ -56,20 +54,12 @@ public:
     }
 
     pistolji(const pistolji &p):oruzje(p.cena, p.tip, p.puc, p.BrMunicije){
-        tip = p.tip;
-        puc = p.puc;
-        cena = p.cena;
-        BrMunicije = p.BrMunicije;
-        TrenutnoMunicije = p.TrenutnoMunicije;
         stanje = p.stanje;
         pis = p.pis;
     }
 
     double GetStanje()const {return stanje;}
     void SetStanje(double stanje)(stanje = s);
-
-    int GetTrenutnoMunicije() const {return TrenutnoMunicije;}
-    void SetTrenutnoMunicije(int TrenutnoMunicije)(TrenutnoMunicije = m);
 
     GettipPistplja()const {return pis;}
     void settipPistolja(tipPistolja p)(pis = p);
