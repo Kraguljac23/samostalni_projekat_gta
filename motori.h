@@ -9,8 +9,7 @@ enum TipMotora{SPORTSKI, CROSS, QUAD};
 class motori: public vozila{
 private:
     TipMotora moto;
-    int gorivo;
-    int money;
+    float gorivo;
 public:
     motori(): vozila(){
         if(moto == SPORTSKI){
@@ -36,10 +35,9 @@ public:
             gorivo = 100;
     }
 
-    auti(TipMotora mm, int g, int m, int ss, int gg, int ts, TipVozila v, struct Cena cc):vozila(ss, gg, ts, v, cc, s){
+    auti(TipMotora mm, float g, int m, int ss, int gg, int ts, TipVozila v, struct Cena cc):vozila(ss, gg, ts, v, cc, s){
         moto = mm;
         gorivo = g;
-        money = m;
     }
 
     bool auti::upali(){
@@ -110,17 +108,14 @@ public:
 
     auti(const auti& a):vozila(a.seats, a.gears, a.TopSpeed, a.voz, a.cena, a.stanje){
         gorivo = a.gorivo;
-        money = a.money;
         moto = a.moto;
     }
 
 
 
-    int getMoney()const{return money;}
-    void setMoney(int m)(money = m);
 
-    int getgorivo()const{return gorivo;}
-    void setGorivo(int g)(gorivo = g);
+    float getgorivo()const{return gorivo;}
+    void setGorivo(float g)(gorivo = g);
 
     getDriveTrain()const {return drive;}
     void setDriveTrain(DriveTrain d)(drive = d);
