@@ -9,7 +9,6 @@ enum TipBombe{GRANATA, STUN, SMOKE};
 class bombe: public oruzje{
 private:
     TipBombe bum;
-    double stanje;
     float damage;
 public:
     bomba():oruzje(){
@@ -25,9 +24,8 @@ public:
     }
     }
 
-    bomba(int c, int br, float d, int tm, double s, TipBombe b, TipOruzja t, TipPucanja p):oruzje(c, br, p, t, tm){
+    bomba(int c, int br, float d, int tm, TipBombe b, TipOruzja t, TipPucanja p):oruzje(c, br, p, t, tm){
         damage = d;
-        stanje = s;
         bum = b;
     }
 
@@ -46,14 +44,11 @@ public:
     }
 
     bombe(const bombe &boom):oruzje(boom.cena, boom.tip, boom.puc, boom.BrMunicije, boom.TrenutnoMunicije){
-        stanje = boom.stanje;
         damage = boom.damage;
         bum = boom.bum;
     }
 
 
-    double GetStanje()const{return stanje;}
-    void SetStanje(double stanje)(stanje = s);
 
     GetTipBombe()const{return TipBombe;}
     void SetTipBombe(TipBombe b)(bum = b);
