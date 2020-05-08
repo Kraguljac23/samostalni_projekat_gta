@@ -11,8 +11,7 @@ class auti: public vozila{
 private:
     TipAuta car;
     DriveTrain drive;
-    int gorivo;
-    double money;
+    float gorivo;
 public:
     auti(): vozila(){
         if(car == SPORTSKI){
@@ -51,7 +50,7 @@ public:
 
     }
 
-    auti(TipAuta c, DriveTrain d, int g, double m, int ss, int gg, int ts, TipVozila v, struct Cena cc, stanjeVozila ss):vozila(ss, gg, ts, v, cc, s){
+    auti(TipAuta c, DriveTrain d, float g, double m, int ss, int gg, int ts, TipVozila v, struct Cena cc, stanjeVozila ss):vozila(ss, gg, ts, v, cc, s){
         car = c;
         drive = d;
         gorivo = g;
@@ -137,8 +136,8 @@ money = a.money;
     double getMoney()const{return money;}
     void setMoney(double m)(money = m);
 
-    int getgorivo()const{return gorivo;}
-    void setGorivo(int g)(gorivo = g);
+    float getgorivo()const{return gorivo;}
+    void setGorivo(float g)(gorivo = g);
 
     getTipAuta()const {return car;}
     void setTipAuta(TipAuta a)(car = a);
