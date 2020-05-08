@@ -10,8 +10,7 @@ class bombe: public oruzje{
 private:
     TipBombe bum;
     double stanje;
-    int damage;
-    int TrenutnoMunicije;
+    float damage;
 public:
     bomba():oruzje(){
     tip = BOMBA;
@@ -26,15 +25,10 @@ public:
     }
     }
 
-    bomba(int c, int br, int d, int tm, double s, TipBombe b, TipOruzja t, TipPucanja p):oruzje(c, br, p, t){
-        cena = c;
-        BrMunicije = br;
+    bomba(int c, int br, float d, int tm, double s, TipBombe b, TipOruzja t, TipPucanja p):oruzje(c, br, p, t, tm){
         damage = d;
-        TrenutnoMunicije = tm;
         stanje = s;
         bum = b;
-        tip = t;
-        puc = p;
     }
 
 
@@ -51,8 +45,7 @@ public:
     return uspesno;
     }
 
-    bombe(const bombe &boom):oruzje(boom.cena, boom.tip, boom.puc, boom.BrMunicije){
-        TrenutnoMunicije = boom.TrenutnoMunicije;
+    bombe(const bombe &boom):oruzje(boom.cena, boom.tip, boom.puc, boom.BrMunicije, boom.TrenutnoMunicije){
         stanje = boom.stanje;
         damage = boom.damage;
         bum = boom.bum;
@@ -62,14 +55,11 @@ public:
     double GetStanje()const{return stanje;}
     void SetStanje(double stanje)(stanje = s);
 
-    int GetTrenutnoMunicije()const {return TrenutnoMunicije;}
-    void setTrenutnoMunicije(int m)(TrenutnoMunicije = m);
-
     GetTipBombe()const{return TipBombe;}
     void SetTipBombe(TipBombe b)(bum = b);
 
-    int getdamage()const {return damage;}
-    void setdamage(int d)(damage = d);
+    float getdamage()const {return damage;}
+    void setdamage(float d)(damage = d);
 };
 
 
