@@ -133,8 +133,6 @@ money = a.money;
 
 
 
-    double getMoney()const{return money;}
-    void setMoney(double m)(money = m);
 
     float getgorivo()const{return gorivo;}
     void setGorivo(float g)(gorivo = g);
