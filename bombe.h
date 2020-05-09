@@ -9,13 +9,15 @@ enum TipBombe{GRANATA, STUN, SMOKE};
 class bombe: public oruzje{
 private:
     TipBombe bum;
-    float damage;
+    int damage;
+    int TrenutnoMunicije;
 public:
     bomba():oruzje(){
     tip = BOMBA;
     puc = EXPLOSION;
     cena = 1100;
     BrMunicije = 3;
+    TrenutnoMunicije = 2;
 
      if(TipBombe == STUN || TipBombe == SMOKE{
         damage = 0;
@@ -24,37 +26,33 @@ public:
     }
     }
 
-    bomba(int c, int br, float d, int tm, TipBombe b, TipOruzja t, TipPucanja p):oruzje(c, br, p, t, tm){
+    bomba(int c, int br, int d, int tm, TipBombe b, TipOruzja t, TipPucanja p):oruzje(c, br, p, t){
+        cena = c;
+        BrMunicije = br;
         damage = d;
-        bum = b;
+        TrenutnoMunicije = tm;
+                bum = b;
+        tip = t;
+        puc = p;
     }
 
 
-    bool bombe::buy(){
-    bool uspesno;
 
-    if(stanje >= cena * 3 && TrenutnoMunicije = 0){
-        uspesno = true;
-        TrenutnoMunicije = BrMunicije;
-    }else{
-    uspesno = false;
-    count << "Nemate dovoljno sredstava za kupovinu oruzja."
-    }
-    return uspesno;
-    }
-
-    bombe(const bombe &boom):oruzje(boom.cena, boom.tip, boom.puc, boom.BrMunicije, boom.TrenutnoMunicije){
+    bombe(const bombe &boom):oruzje(boom.cena, boom.tip, boom.puc, boom.BrMunicije){
+        TrenutnoMunicije = boom.TrenutnoMunicije;
         damage = boom.damage;
         bum = boom.bum;
     }
 
 
+    int GetTrenutnoMunicije()const {return TrenutnoMunicije;}
+    void setTrenutnoMunicije(int m)(TrenutnoMunicije = m);
 
     GetTipBombe()const{return TipBombe;}
     void SetTipBombe(TipBombe b)(bum = b);
 
-    float getdamage()const {return damage;}
-    void setdamage(float d)(damage = d);
+    int getdamage()const {return damage;}
+    void setdamage(int d)(damage = d);
 };
 
 
