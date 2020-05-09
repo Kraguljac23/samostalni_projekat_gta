@@ -52,7 +52,6 @@ public:
         TrenutnoMunicije = o.TrenutnoMunicije;
     }
 
-     bool buy();
      bool reload();
 
      int GetCena() const{return cena;}
