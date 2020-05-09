@@ -5,43 +5,37 @@ enum TipMape{NAVIGATION, WL, ESCMANU};
 enum BojaMape{PURPLE, BLUE, GREY};
 enum Velicina{ZOOMED, UNZOOMED};
 
-class mapa(): public EscMenu{
+class mapa(){
 private:
     TipMape MAP;
     BojaMape boja;
     Velicina SIZE;
-    bool wl;
 public:
     mapa():EscMenu(){
     if(MAP = WL){
         vreme = 1;
-        wl = true;
         boja = BLUE;
         SIZE = ZOOMED;
     }else if(MAP = ESCMANU){
         vreme = 2;
-        wl = false;
         boja = GREY;
         SIZE = UNZOOMED;
     }else if(MAP = NAVIGATION)
         boja = PURPLE;
-        wl = false;
         vreme = 3;
         SIZE = ZOOMED;
     }
 
-    mapa(TipMape m, BojaMape b, Velicina s, bool w): EscMenu(v){
+    mapa(TipMape m, BojaMape b, Velicina s){
          MAP = m;
          boja = b;
          SIZE = s;
-         wl = w;
     }
 
-    mapa(const mapa& m): EscMenu(m.vreme){
+    mapa(const mapa& m){
         MAP = m.MAP;
         boja = m.boja;
         SIZE = m.SIZE;
-        wl = m.wl;
     }
 
     bool mapa()::zoom{
@@ -70,23 +64,6 @@ public:
     return uspesno;
     }
 
-    bool mapa()::select{
-    bool uspesno;
-
-    if(MAP == ESCMANU){
-        uspesno = true;
-        MAP = NAVIGATION;
-        boja = PURPLE;
-    }else if(MAP == WL){
-        uspesno = false;
-        cout << "Imate wanted level ne mozete koristiti navigaciju." << endl
-    }else if(MAP == NAVIGATION){
-        uspesno = false;
-        cout << "Navigacije ja vec ukljucena." << endl;
-    }
-    return uspesno;
-    }
-
     bool mapa()::cancel{
     bool uspesno;
 
@@ -109,8 +86,6 @@ public:
 
     getVelicina()const {return SIZE;}
     void setVelicina(Velicina s)(SIZE = s);
-
-    bool getwl()const {return wl;}
 };
 
 #endif // MAPA_H_INCLUDED
