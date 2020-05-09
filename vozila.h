@@ -45,9 +45,6 @@ public:
 
     bool upali();
     bool ugasi();
-    bool popravi();
-    bool sell();
-    bool buy();
     bool refill();
 
     int getCena()const{return Cena;}
