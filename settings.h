@@ -6,7 +6,7 @@ enum Grafika{LOW, MID, HIGH};
 enum Resolution{LOW, HDREADY, FULLHD};
 enum SetAutio{MUTE ,TIHO, SREDNJE, GLASNO};
 
-class settings(): public EscMenu{
+class settings: public EscMenu{
 private:
     DeoSettings dset;
     Grafika graf;
