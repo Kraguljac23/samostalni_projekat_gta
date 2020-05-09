@@ -53,47 +53,6 @@ public:
     return uspesno;
     }
 
-    bool brodovi::popravi(){
-    bool uspesno;
-
-    if(money >= 1000){
-    uspesno = true;
-    stanje = UGASEN;
-    gorivo = 100;
-    money -= 1000;
-    }else{
-    uspesno = false;
-    cout << "Nemate dovoljno novca za popravku vozila." << endl;
-    }
-    return uspesno;
-    }
-
-    bool brodovi()::buy(){
-    bool uspesno;
-
-    if(stanje >= cena){
-        uspesno = true;
-        stanje -= cena;
-    }else{
-    uspesno = false;
-    cout << "Nemate dovoljno sredstava za kupovinu broda."
-    }
-    return uspesno;
-    }
-
-    bool brodovi::sell(){
-    bool uspesno;
-
-    if(stanje == POKVAREN){
-        uspesno = false;
-        cout << "Vas brod je pokvaren, da biste ga prodali morate ga popraviti." << endl;
-    }else{
-    uspesno = true;
-    money += cena.sell;
-    }
-    return uspesno;
-    }
-
     bool brodovi::refill(){
     bool uspesno;
 
@@ -121,11 +80,8 @@ public:
     }
 
     brodovi(const brodovi& b):vozila(){
-        cena = b.cena;
-        gears = b.gears;
-        seats = b.seats;
-        TopSpeed = b.TopSpeed;
         gorivo = b.gorivo;
+        brod = b.brod;
     }
 
 
