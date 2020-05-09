@@ -10,7 +10,6 @@ class bombe: public oruzje{
 private:
     TipBombe bum;
     int damage;
-    int TrenutnoMunicije;
 public:
     bomba():oruzje(){
     tip = BOMBA;
@@ -26,27 +25,18 @@ public:
     }
     }
 
-    bomba(int c, int br, int d, int tm, TipBombe b, TipOruzja t, TipPucanja p):oruzje(c, br, p, t){
-        cena = c;
-        BrMunicije = br;
+    bomba(int c, int br, int d, int tm, TipBombe b, TipOruzja t, TipPucanja p):oruzje(c, br, p, t, tm){
         damage = d;
-        TrenutnoMunicije = tm;
-                bum = b;
-        tip = t;
-        puc = p;
+        bum = b;
     }
 
 
 
-    bombe(const bombe &boom):oruzje(boom.cena, boom.tip, boom.puc, boom.BrMunicije){
-        TrenutnoMunicije = boom.TrenutnoMunicije;
+    bombe(const bombe &boom):oruzje(boom.cena, boom.tip, boom.puc, boom.BrMunicije, boom.TrenutnoMunicije){
         damage = boom.damage;
         bum = boom.bum;
     }
 
-
-    int GetTrenutnoMunicije()const {return TrenutnoMunicije;}
-    void setTrenutnoMunicije(int m)(TrenutnoMunicije = m);
 
     GetTipBombe()const{return TipBombe;}
     void SetTipBombe(TipBombe b)(bum = b);
