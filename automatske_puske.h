@@ -22,27 +22,16 @@ public:
 
     cena = 3500;
     BrMunicije = 30;
+    TrenutnoMunicije = 0;
     }
 
-    AutomatskePuske(int c, int br,int tm, TipPuske g, TipPucanja p, TipOruzja t):oruzje(c, br, p, t){
+    AutomatskePuske(int c, int br, int tm, TipPuske g, TipPucanja p, TipOruzja t):oruzje(c, br, p, t){
+
         TrenutnoMunicije = tm;
         gun = g;
     }
 
-    bool AutomatskePuske()::buy(){
-    bool uspesno;
-
-    if(Stanje >= cena){
-        uspesno = true;
-        Stanje -= cena;
-    }else{
-    uspesno = false;
-    cout << "Nemate dovoljno sredstava za kupovinu oruzja."
-    }
-    return uspesno;
-    }
-
-    bool AutomatskePuske::reload(){
+bool AutomatskePuske::reload(){
     bool uspenso;
 
     if(TrenutnoMunicije < BrMunicije){
@@ -55,12 +44,11 @@ public:
     return uspenso;
     }
 
+
     AutomatskePuske(const AutomatskePuske &a):oruzje(a.cena, a.BrMunicije, a.tip, a.puc){
-        TrenutnoMunicije = a.TrenutnoMunicije;
+                TrenutnoMunicije = a.TrenutnoMunicije;
         gun = a.gun;
     }
-
-
 
     GetTipPuske()const {return gun;}
     void SetTipPuske(TipPuske g)(gun = g);
@@ -68,7 +56,3 @@ public:
     int GetTrenutnoMunicije()const{return TrenutnoMunicije;}
     void setTrenutnoMunicije(int TrenutnoMunicije)(TrenutnoMunicije = m);
 };
-
-
-
-#endif // AUTOMATSKE_PUSKE_H_INCLUDED
