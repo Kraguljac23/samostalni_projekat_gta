@@ -1,8 +1,6 @@
 #ifndef POLICIJSKA_VOZILA_H_INCLUDED
 #define POLICIJSKA_VOZILA_H_INCLUDED
 
-enum Pozicija{GRADJANIN, SAOBRACAJAC, SPECIJALAC};
-
 class PolicijskaVozila(): public vozila(){
 private:
     Pozicija poz;
@@ -36,10 +34,6 @@ public:
         if(gorivo == 0 || stanje == POKVAREN){
             uspesno = false;
             cout << "Vozilo se nije upalilo, ili je pokvareno ili nema goriva." << endl;
-        }else if(poz == GRADJANIN){
-        uspesno = false;
-        wl = 5;
-        cout << "Niste ovlasceni da upravljate ovim vozilom." << endl;
         }else{
         uspesno = true;
         }
@@ -60,47 +54,6 @@ public:
     return stanjeVozila;
     }
 
-    bool PolicijskaVozila::popravi(){
-    bool uspesno;
-
-    if(money >= 1000){
-    uspesno = true;
-    stanje = UGASEN;
-    gorivo = 100;
-    money -= 1000;
-    }else{
-    uspesno = false;
-    cout << "Nemate dovoljno novca za popravku vozila." << endl;
-    }
-    return uspesno;
-    }
-
-    bool Policijskavozila::buy(){
-    bool uspesno;
-
-    if(money >= cena && (poz == SAOBRACAJAC || poz  == SPECIJALAC)){
-        uspesno = true;
-        money -= cena;
-    }else{
-    uspesno = false;
-    cout << "Nemate dovoljno sredstava za kupovinu vozila."
-    }
-    return uspesno;
-    }
-
-     bool PolicijskaVozila::sell(){
-    bool uspesno;
-
-    if(stanje == POKVAREN){
-        uspesno = false;
-        cout << "Vas auto je pokvaren, da biste ga prodali morate ga popraviti." << endl;
-    }else{
-    uspesno = true;
-    money += cena.sell;
-    }
-    return uspesno;
-    }
-
     bool PolicijsakVozila::refill(){
     bool uspesno;
 
@@ -113,7 +66,6 @@ public:
     }
     return uspesno;
     }
-
 
 
     float getGorivo()const{return gorivo;}
