@@ -8,7 +8,6 @@ enum TipPuske{AUTOMATSKA, BURST};
 class AutomatskePuske: public oruzje{
 private:
    TipPuske gun;
-   int TrenutnoMunicije;
 public:
     AutomatskePuske():oruzje(){
 
@@ -25,9 +24,7 @@ public:
     TrenutnoMunicije = 0;
     }
 
-    AutomatskePuske(int c, int br, int tm, TipPuske g, TipPucanja p, TipOruzja t):oruzje(c, br, p, t){
-
-        TrenutnoMunicije = tm;
+    AutomatskePuske(int c, int br, int tm, TipPuske g, TipPucanja p, TipOruzja t):oruzje(c, br, p, t, tm){
         gun = g;
     }
 
@@ -45,14 +42,10 @@ bool AutomatskePuske::reload(){
     }
 
 
-    AutomatskePuske(const AutomatskePuske &a):oruzje(a.cena, a.BrMunicije, a.tip, a.puc){
-                TrenutnoMunicije = a.TrenutnoMunicije;
+    AutomatskePuske(const AutomatskePuske &a):oruzje(a.cena, a.BrMunicije, a.tip, a.puc, a.TrenutnoMunicije){
         gun = a.gun;
     }
 
     GetTipPuske()const {return gun;}
     void SetTipPuske(TipPuske g)(gun = g);
-
-    int GetTrenutnoMunicije()const{return TrenutnoMunicije;}
-    void setTrenutnoMunicije(int TrenutnoMunicije)(TrenutnoMunicije = m);
 };
