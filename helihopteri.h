@@ -54,47 +54,6 @@ public:
     return uspesno;
     }
 
-    bool helihopteri::popravi(){
-    bool uspesno;
-
-    if(money >= 1000){
-    uspesno = true;
-    stanje = UGASEN;
-    gorivo = 100;
-    money -= 1000;
-    }else{
-    uspesno = false;
-    cout << "Nemate dovoljno novca za popravku vozila." << endl;
-    }
-    return uspesno;
-    }
-
-    bool helihopteri()::buy(){
-    bool uspesno;
-
-    if(stanje >= cena){
-        uspesno = true;
-        stanje -= cena;
-    }else{
-    uspesno = false;
-    cout << "Nemate dovoljno sredstava za kupovinu auta."
-    }
-    return uspesno;
-    }
-
-    bool helihopteri::sell(){
-    bool uspesno;
-
-    if(stanje == POKVAREN){
-        uspesno = false;
-        cout << "Vas auto je pokvaren, da biste ga prodali morate ga popraviti." << endl;
-    }else{
-    uspesno = true;
-    money += cena.sell;
-    }
-    return uspesno;
-    }
-
     bool helihopteri::refill(){
     bool uspesno;
 
