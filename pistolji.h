@@ -25,19 +25,6 @@ public:
         pis = p;
     }
 
-    bool pistolji::buy(){
-    bool uspesno;
-
-    if(stanje >= cena){
-        uspesno = true;
-        stanje -= cena;
-    }else{
-    uspesno = false;
-    cout << "Nemate dovoljno sredstava za kupovinu oruzja."
-    }
-    return uspesno;
-    }
-
     bool pistolji::reload(){
     bool uspesno;
 
