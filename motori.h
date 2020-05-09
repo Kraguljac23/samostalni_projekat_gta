@@ -53,46 +53,6 @@ public:
     return uspesno;
     }
 
-    bool auti::popravi(){
-    bool uspesno;
-
-    if(stanje >= 1000){
-    uspesno = true;
-    stanje = UGASEN;
-    gorivo = 100;
-    }else{
-    uspesno = false;
-    cout << "Nemate dovoljno novca za popravku vozila." << endl;
-    }
-    return uspesno;
-    }
-
-    bool auti()::buy(){
-    bool uspesno;
-
-    if(stanje >= cena){
-        uspesno = true;
-        stanje -= cena;
-    }else{
-    uspesno = false;
-    cout << "Nemate dovoljno sredstava za kupovinu auta."
-    }
-    return uspesno;
-    }
-
-    bool auti::sell(){
-    bool uspesno;
-
-    if(stanje == POKVAREN){
-        uspesno = false;
-        cout << "Vas auto je pokvaren, da biste ga prodali morate ga popraviti." << endl;
-    }else{
-    uspesno = true;
-    money += cena.sell;
-    }
-    return uspesno;
-    }
-
     bool auti::refill(){
     bool uspesno;
 
@@ -110,9 +70,6 @@ public:
         gorivo = a.gorivo;
         moto = a.moto;
     }
-
-
-
 
     float getgorivo()const{return gorivo;}
     void setGorivo(float g)(gorivo = g);
