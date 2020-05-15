@@ -13,21 +13,30 @@ private:
     DinString ime;
     double StanjeNaRacunu;
     double reputation;
+    int health;
+    bool armour;
+    int stamina;
 public:
-    igrac():ime("Aleksa Kraguljac"), StanjeNaRacunu(5311), reputation(100000){
+    igrac():ime("Aleksa Kraguljac"), StanjeNaRacunu(5311), reputation(100000), {
 
     }
 
-    igrac(DinString i, double s, double r){
+    igrac(DinString i, double s, double r, int h, bool a, int st){
         ime = i;
         StanjeNaRacunu = s;
         reputation = r;
+        health = h;
+        stamina = st;
+        armour = a;
     }
 
     igrac(const igrac& i){
         ime = i.ime;
         StanjeNaRacunu = i.StanjeNaRacunu;
         reputation = i.reputation;
+        health = i.health;
+        stamina = i.stamina;
+        armour = i.armour;
     }
 
     DinString getime()const {return ime;}
@@ -38,6 +47,15 @@ public:
 
     double getreputation()const {return reputation;}
     void setreputation(double r)(reputation = r);
+    
+    int gethelath()const {return health;}
+    void sethelath(int h)(health = h);
+
+    int getstamina()const {return stamina;}
+    void setstamina(int s)(stamina = s);
+
+    bool getarmour()const {return armour;}
+    void setarmour(bool a)(armour = a);
 };
 
 #endif // IGRAC_H_INCLUDED
